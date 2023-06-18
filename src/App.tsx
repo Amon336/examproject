@@ -1,13 +1,15 @@
 import './App.css'
-import { Hello } from './components/Hello'
+import { Link, Route, Routes} from 'react-router-dom'
 
-function App() {
-
+export const App = () => {
   return (
-    <>
-      <Hello/>
-    </>
+    <div className="app">
+      <Link to="/">Главная</Link>
+      <Link to="/about">О нас</Link>
+      <Routes>
+        <Route path="/" element={<div>main</div>}/>
+        <Route path="/about" element={<div>about</div>}/>
+      </Routes>
+    </div>
   )
 }
-
-export default App
